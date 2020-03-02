@@ -1,0 +1,90 @@
+# Forms
+---
+# Newsletter form
+- id: FormNewsletter
+  heading: Enter my newsletter
+  context: Subscribe to my newsletter and receive interesting information every week! I'll never give away your information and you can unsubscribe at any time.
+  form:
+    name: newsletter
+    action: https://damir.us11.list-manage.com/subscribe/post?u=800bfb6e2a03c12de30b3eff1&amp;id=9a5ebe0d08
+    method: POST
+    pending: On it...
+    pass: You're in! Thanks for joining and talk to you soon.
+    fail: Whoops, something went wrong. Give it another shot!
+    button: Subscribe
+    field:
+      type: email
+      name: email
+      placeholder: Email address
+# Prospect form
+- id: FormProspect
+  heading: I want to help with your project
+  context: I'm always looking forward to helping someone with their project, I offer both design and development services and consulations.
+  form:
+    isNetlify: true
+    isHoneypot: true
+    isCaptcha: false
+    name: prospect
+    action: /intro
+    method: POST
+    button: Get quote
+    hint: Please fill out the form with the required information to receive a quote for your project.
+    fields:
+    - order: 0
+      isRequired: true
+      pushRight: true
+      flex: 1 33.3333%
+      type: text
+      name: prospectName
+      label: Full name
+    - order: 1
+      isRequired: true
+      pushLeft: true
+      pushRight: true
+      flex: 1 33.3333%
+      type: email
+      name: prospectEmail
+      label: Email address
+    - order: 2
+      isRequired: false
+      pushLeft: true
+      flex: 1 33.3333%
+      type: phone
+      name: prospectPhone
+      label: Phone number
+    - order: 3
+      isRequired: true
+      pushRight: true
+      flex: 1 50%
+      type: text
+      name: projectLocation
+      label: Project location
+      placeholder: City or zipcode
+    - order: 4
+      isRequired: false
+      pushLeft: true
+      flex: 1 50%
+      type: select
+      name: projectType
+      label: Project type
+      placeholder: Search for or select a project type
+      options:
+      - value: design
+        label: Design
+      - value: development
+        label: Development
+      - value: management
+        label: Management
+    - order: 5
+      isRequired: true
+      type: textarea
+      name: projectDetails
+      label: Project details
+      placeholder: Please be as descriptive as possible to get a more accurate quote.
+    - order: 6
+      isRequired: false
+      type: upload
+      name: projectUploads
+      label: Upload project files
+      placeholder: 'Allowed file types: .pdf, .jpg, .png, .svg'
+      allowed: .pdf, .jpg, .png, .svg

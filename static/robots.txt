@@ -1,0 +1,7 @@
+User-agent: *
+
+Disallow: /
+Disallow: */tags/
+Disallow: */categories/
+
+Sitemap: https://gatsby-seed.withpulp.com/sitemap.xml

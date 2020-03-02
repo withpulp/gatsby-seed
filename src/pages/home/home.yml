@@ -1,0 +1,69 @@
+# Home content
+---
+- id: HomeHeader
+  order: 0
+  section: header
+  caption:
+    heading: This is the page header caption.
+    headingColor: secondaryDark
+    context: This is optional text that provides more context to the required heading above, just in case your site can't be explained in one short sentence. Try to limit this to at least three sentences to keep users interested.
+  buttons:
+  - label: Call to action
+    link: /contact
+  options:
+    backgroundColor: gray6
+    minHeight: 75vh
+- id: HomeServices
+  order: 1
+  section: services
+  caption:
+    heading: This section can callout your services.
+  content: |
+    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <h5>Lorem ipsum dolor sit amet</h5>
+    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Purus in mollis nunc sed. Mauris in aliquam sem fringilla ut morbi tincidunt augue interdum. Velit egestas dui id ornare arcu odio ut. A diam maecenas sed enim ut.</p>
+  buttons:
+  - label: See full list of services
+    link: /services
+- id: HomeProjects
+  order: 2
+  section: projects
+  caption:
+    heading: This section can callout your work.
+    context: This is optional text that provides more context to the required heading above.
+- id: HomeContact
+  order: 3
+  section: contact
+  caption:
+    heading: This section should inspire you to press one of the buttons below.
+    headingColor: secondaryDark
+    context: This is optional text that provides more context to the required heading above.
+    contextColor: secondary
+  buttons:
+  - label: Contact us now
+    link: /contact
+  - label: See more of our work
+    link: /work
+  options:
+    backgroundColor: primary
+    maxWidth: 48em
+    minHeight: 50vh
+- id: HomePosts
+  order: 4
+  section: posts
+  caption:
+    heading: This section can callout your blog.
+    context: This is optional text that provides more context to the required heading above
+  options:
+    backgroundColor: gray6
+- id: HomeFooter
+  order: 5
+  section: footer
+  caption:
+    heading: This is the page footer caption.
+    headingColor: primary
+    context: This is optional text that provides more context to the required heading above.
+    contextColor: white
+  options:
+    backgroundColor: secondary

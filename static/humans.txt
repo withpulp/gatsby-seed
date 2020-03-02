@@ -1,0 +1,20 @@
+/* TEAM */
+Co-Founder: Damir Vazgird
+Site: damirvazgird.com
+Contact: damir [at] withpulp.com
+Twitter: @dvazgird
+From: New York, NY, USA
+
+/* THANKS */
+JS Framework: Gatsby
+Twitter: @gatsbyjs
+
+CSS Utility: Styled Components
+Twitter: @mxstbr
+
+/* SITE */
+Last Update: 2019/10/08
+Language: English
+Doctype: HTML5
+IDE: VSC, Sketch, Photoshop
+Software: React, Gatsby
