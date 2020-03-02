@@ -1,6 +1,6 @@
-# Seed - Gatsby Starter
+# Gatsby Seed
 
-A gatsby starter with an opinionated architecture and components for the purpose of static websites.
+A gatsby starter with an opinionated architecture and components for the purpose of quickly creating SEO friendly static websites.
 
 ## Setup
 

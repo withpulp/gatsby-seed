@@ -4,8 +4,8 @@ const theme = require('./theme');
 
 module.exports= {
     name: 'Gatsby Seed',
-    title: 'Gatsby Seed | A gatsby-starter seed for quickly making SEO-friendly static sites',
-    description: 'A gatsby-starter seed for quickly making SEO-friendly static sites.',
+    title: 'Gatsby Seed | A gatsby starter for quickly making SEO-friendly static sites',
+    description: 'A gatsby starter for quickly making SEO-friendly static sites.',
     siteUrl: 'https://withpulp.com/gatsbyjs',
     pathPrefix: null,
     language: 'en',
