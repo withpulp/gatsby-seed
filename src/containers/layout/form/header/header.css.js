@@ -11,12 +11,12 @@ export const HeaderWrapper = styled(
     displayName: 'form__layout--header-wrapper'
 })`
     z-index: 3;
-    width: 100%;
     flex: none;
 
-    ${({ theme: { color, transition }}) => css`
-        transition: ${transition.base};
+    ${({ theme: { color, space, transition }}) => css`
+        padding: ${space[4]};
         background-color: ${color.white};
+        transition: ${transition.base};
     `}
 `
 

@@ -4,8 +4,8 @@ import { StaticQuery, graphql } from 'gatsby';
 import { ThemeProvider } from 'styled-components';
 
 // TODO:
-// - get theme from package import or graphQL data.
 // - import Head and Styles from same dir namespace
+// - merge this composition into one Layout component
 
 import theme from '../../../../theme';
 import Head from 'containers/head';
@@ -13,7 +13,8 @@ import Styles from 'containers/head/styles';
 
 import Header from './header';
 import Footer from './footer';
-import { Container, Main } from './default.css';
+import { LayoutContainer, LayoutMain } from '../layout.css';
+import { layoutPropTypes } from '../layout';
 
 const LayoutDefault = ({ children }) => (
     <StaticQuery
@@ -29,10 +30,6 @@ const LayoutDefault = ({ children }) => (
                             label
                             path
                         }
-                        # Configure theme query
-                        # theme {
-                        #     ...
-                        # }
                         title
                     }
                 }
@@ -54,7 +51,7 @@ const LayoutDefault = ({ children }) => (
 
             return (
                 <ThemeProvider theme={theme}>
-                    <Container>
+                    <LayoutContainer>
                         <Head />
                         <Styles />
                         <Header
@@ -62,12 +59,12 @@ const LayoutDefault = ({ children }) => (
                             name={siteMetadata.name}
                             routes={siteMetadata.routes}
                         />
-                        <Main>{children}</Main>
+                        <LayoutMain>{children}</LayoutMain>
                         <Footer
                             copyright={siteMetadata.copyright}
                             routes={siteMetadata.routes}
                         />
-                    </Container>
+                    </LayoutContainer>
                 </ThemeProvider>
             );
         }}
@@ -75,6 +72,7 @@ const LayoutDefault = ({ children }) => (
 );
 
 LayoutDefault.propTypes = {
+    ...layoutPropTypes,
     children: PropTypes.node.isRequired,
     data: PropTypes.shape({
         logo: PropTypes.shape({
@@ -104,7 +102,6 @@ LayoutDefault.propTypes = {
                         path: PropTypes.string,
                     }),
                 ),
-                // theme: PropTypes.objectOf(PropTypes.object),
                 title: PropTypes.string,
             }),
         }),

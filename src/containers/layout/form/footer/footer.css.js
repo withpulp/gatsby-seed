@@ -14,7 +14,8 @@ export const FooterWrapper = styled(
     z-index: 1;
     flex: none;
 
-    ${({ theme: { color }}) => css`
+    ${({ theme: { color, space }}) => css`
+        padding: ${space[4]};
         background-color: ${color.white};
     `}
 `

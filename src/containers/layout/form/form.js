@@ -4,8 +4,8 @@ import { StaticQuery, graphql } from 'gatsby';
 import { ThemeProvider } from 'styled-components';
 
 // TODO:
-// - get theme from package import or graphQL data.
 // - import Head and Styles from same dir namespace
+// - merge this composition into one Layout component
 
 import theme from '../../../../theme';
 import Head from 'containers/head';
@@ -13,7 +13,8 @@ import Styles from 'containers/head/styles';
 
 import Header from './header';
 import Footer from './footer';
-import { Wrapper, Container, Main } from './form.css';
+import { LayoutWrapper, LayoutContainer, LayoutMain } from '../layout.css';
+import { layoutPropTypes } from '../layout';
 
 const LayoutForm = ({ children, title, description }) => (
     <StaticQuery
@@ -32,18 +33,18 @@ const LayoutForm = ({ children, title, description }) => (
 
             return (
                 <ThemeProvider theme={theme}>
-                    <Wrapper>
-                        <Container>
+                    <LayoutWrapper as="div" layoutType="form">
+                        <LayoutContainer layoutType="form">
                             <Head
                                 title={title}
                                 description={description}
                             />
                             <Styles />
                             <Header name={siteMetadata.name} />
-                            <Main>{children}</Main>
+                            <LayoutMain>{children}</LayoutMain>
                             <Footer copyright={siteMetadata.copyright} />
-                        </Container>
-                    </Wrapper>
+                        </LayoutContainer>
+                    </LayoutWrapper>
                 </ThemeProvider>
             );
         }}
@@ -51,6 +52,7 @@ const LayoutForm = ({ children, title, description }) => (
 );
 
 LayoutForm.propTypes = {
+    ...layoutPropTypes,
     children: PropTypes.node.isRequired,
     data: PropTypes.shape({
         site: PropTypes.shape({
@@ -63,8 +65,6 @@ LayoutForm.propTypes = {
             }),
         }),
     }),
-    title: PropTypes.string,
-    description: PropTypes.string,
 };
 
 export default LayoutForm;

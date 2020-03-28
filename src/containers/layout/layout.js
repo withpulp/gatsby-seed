@@ -1,32 +1,27 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import LayoutDefault from './default';
 import LayoutForm from './form';
+import _defaultProps from './_defaultProps';
+import _propTypes from './_propTypes';
 
-// TODO: refactor layout into a context provider with layoutTypes to provide different layouts.
+// TODO:
+// - merge default and form into single composition
+//   - make use of layoutTypes to set component styles
+//   - use shared components that can be configured using various themeOptions (topbar, footer, etc)
 
-const Layout = ({
-    children,
-    id,
-    title,
-    // description,
-    // image,
-}) => {
-    switch (id) {
+const Layout = ({ children, head, layoutType, themeOptions }) => {
+    switch (layoutType) {
         case 'form':
-            return <LayoutForm children={children} title={title} />
+            return <LayoutForm {...head} {...themeOptions}>{children}</LayoutForm>
         default:
-            return <LayoutDefault children={children} />
+            return <LayoutDefault {...head} {...themeOptions}>{children}</LayoutDefault>
     }
 };
 
-Layout.propTypes = {
-    children: PropTypes.node.isRequired,
-    id: PropTypes.string,
-    title: PropTypes.string,
-    description: PropTypes.string,
-    image: PropTypes.string,
-};
+Layout.propTypes = _propTypes;
+Layout.defaultProps = _defaultProps;
 
+export const layoutPropTypes = _propTypes;
+export const layoutDefaultProps = _defaultProps;
 export default Layout;

@@ -141,8 +141,6 @@ const boxTypes = {
             margin-bottom: ${space[16]};
         `}
     `,
-    flex: css``,
-    grid: css``,
     // TODO: better to move topbar to sectionTypes and keep boxTypes more utilitarian
     topbar: css`
         ${_box}
@@ -340,6 +338,32 @@ const gridTypes = {
     `,
 };
 
+// layoutTypes - for configuring layoutTypes used to set layoutType of Layout component.
+const layoutTypes = {
+    form: css`
+        background-color: ${color.white};
+        color: ${color.gray0};
+
+        ${media.tablet`
+            overflow: hidden;
+            max-width: 38em;
+            min-height: auto;
+            margin: ${space[8]} auto;
+            padding: ${space[4]} ${space[8]};
+            border-radius: ${space[1]};
+            box-shadow: 0 0 0.1rem 0.1rem ${color.gray4};
+        `}
+
+        ${media.laptop`
+            margin-right: 10%;
+        `}
+
+        ${media.desktop`
+            margin-right: 20%;
+        `}
+    `,
+};
+
 // TODO: create linkTypes to use with Link component.
 // const linkTypes = {};
 
@@ -355,6 +379,7 @@ module.exports = {
     buttonTypes,
     contentTypes,
     gridTypes,
+    layoutTypes,
     // linkTypes,
     // listTypes,
     // modTypes,
