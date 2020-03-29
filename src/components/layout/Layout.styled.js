@@ -10,9 +10,9 @@ export const LayoutWrapper = styled(Wrapper).withConfig({
         min-height: 100vh;
 
         ${layoutType === 'form' && `
+            align-content: center;
             align-items: center;
             justify-content: center;
-            align-content: center;
             background-color: ${color.secondary};
         `}
     `}
